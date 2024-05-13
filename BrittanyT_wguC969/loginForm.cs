@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,46 @@ namespace BrittanyT_wguC969
 {
     public partial class loginForm : Form
     {
-        public loginForm()
+        private MySqlConnection conn;
+        public loginForm(MySqlConnection connection)
         {
             InitializeComponent();
+            conn = connection;
+        }
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            string username = userNameInput.Text;
+            string password = passwordInput.Text;
+
+            try
+            {
+                string query = "SELECT COUNT(*) FROM User WHERE username = @username AND password = @password";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        
+                        MainForm mainForm = new MainForm();
+                        mainForm.Show();
+
+                        this.Hide();
+                   
+                    }
+                    else
+                    {
+                        MessageBox.Show("The username and password do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

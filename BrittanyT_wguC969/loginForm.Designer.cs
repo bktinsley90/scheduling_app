@@ -100,6 +100,7 @@
             this.loginBtn.TabIndex = 6;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // exitBtn
             // 
@@ -134,7 +135,7 @@
             this.Controls.Add(this.WelcomeLabel);
             this.Controls.Add(this.label1);
             this.Name = "loginForm";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

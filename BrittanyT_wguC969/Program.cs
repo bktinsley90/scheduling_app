@@ -1,4 +1,5 @@
 ﻿using BrittanyT_wguC969.Database;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,8 @@ namespace BrittanyT_wguC969
             Application.SetCompatibleTextRenderingDefault(false);
 
             DBConnection.startConnection();
-            Application.Run(new loginForm());
+            MySqlConnection conn = DBConnection.conn;
+            Application.Run(new loginForm(conn));
             DBConnection.closeConnection();
         }
     }
