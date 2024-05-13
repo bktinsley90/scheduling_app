@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrittanyT_wguC969.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,10 @@ namespace BrittanyT_wguC969
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            DBConnection.startConnection();
             Application.Run(new loginForm());
+            DBConnection.closeConnection();
         }
     }
 }
