@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,10 +16,12 @@ namespace BrittanyT_wguC969
     public partial class loginForm : Form
     {
         private MySqlConnection conn;
+        private ResourceManager resourceManager;
         public loginForm(MySqlConnection connection)
         {
             InitializeComponent();
             conn = connection;
+            //LoadLanguage(CultureInfo.CurrentCulture);
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)
@@ -53,6 +57,19 @@ namespace BrittanyT_wguC969
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void LoadLanguage(CultureInfo cultureInfo)
+        {
+            string languageCode = cultureInfo.TwoLetterISOLanguageName;
+            resourceManager = new ResourceManager($"BrittanyT_wguC969.Resources.{languageCode}", typeof(loginForm).Assembly);
+            userName.Text = resourceManager.GetString("userName");
+            passwordLabel.Text = resourceManager.GetString("passwordLabel");
+            loginBtn.Text = resourceManager.GetString("loginBtn");
+            exitBtn.Text = resourceManager.GetString("exitBtn");
+        }
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

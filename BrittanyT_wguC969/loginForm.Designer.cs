@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.userName = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -39,20 +38,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Login Form";
-            // 
             // WelcomeLabel
             // 
             this.WelcomeLabel.AutoSize = true;
             this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeLabel.Location = new System.Drawing.Point(235, 46);
+            this.WelcomeLabel.Location = new System.Drawing.Point(157, 43);
             this.WelcomeLabel.Name = "WelcomeLabel";
             this.WelcomeLabel.Size = new System.Drawing.Size(118, 26);
             this.WelcomeLabel.TabIndex = 1;
@@ -110,6 +100,7 @@
             this.exitBtn.TabIndex = 7;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // label5
             // 
@@ -133,7 +124,6 @@
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.userName);
             this.Controls.Add(this.WelcomeLabel);
-            this.Controls.Add(this.label1);
             this.Name = "loginForm";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -142,8 +132,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.Label passwordLabel;
