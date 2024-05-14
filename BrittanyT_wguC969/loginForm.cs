@@ -21,9 +21,17 @@ namespace BrittanyT_wguC969
         {
             InitializeComponent();
             conn = connection;
-            //LoadLanguage(CultureInfo.CurrentCulture);
+            LoadLanguage(CultureInfo.CurrentCulture);
         }
-
+        private void LoadLanguage(CultureInfo cultureInfo)
+        {
+            string languageCode = cultureInfo.TwoLetterISOLanguageName;
+            resourceManager = new ResourceManager($"BrittanyT_wguC969.Resources.{languageCode}", typeof(loginForm).Assembly);
+            userNameLabel.Text = resourceManager.GetString("userNameLabel");
+            passwordLabel.Text = resourceManager.GetString("passwordLabel");
+            loginBtn.Text = resourceManager.GetString("loginBtn");
+            exitBtn.Text = resourceManager.GetString("exitBtn");
+        }
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             string username = userNameInput.Text;
@@ -49,7 +57,8 @@ namespace BrittanyT_wguC969
                     }
                     else
                     {
-                        MessageBox.Show("The username and password do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        string errorMessage = resourceManager.GetString("errorMsg");
+                        MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -58,15 +67,7 @@ namespace BrittanyT_wguC969
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LoadLanguage(CultureInfo cultureInfo)
-        {
-            string languageCode = cultureInfo.TwoLetterISOLanguageName;
-            resourceManager = new ResourceManager($"BrittanyT_wguC969.Resources.{languageCode}", typeof(loginForm).Assembly);
-            userName.Text = resourceManager.GetString("userName");
-            passwordLabel.Text = resourceManager.GetString("passwordLabel");
-            loginBtn.Text = resourceManager.GetString("loginBtn");
-            exitBtn.Text = resourceManager.GetString("exitBtn");
-        }
+      
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();

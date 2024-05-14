@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.WelcomeLabel = new System.Windows.Forms.Label();
-            this.userName = new System.Windows.Forms.Label();
+            this.userNameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.userNameInput = new System.Windows.Forms.TextBox();
             this.passwordInput = new System.Windows.Forms.TextBox();
@@ -48,15 +48,15 @@
             this.WelcomeLabel.TabIndex = 1;
             this.WelcomeLabel.Text = "Welcome!";
             // 
-            // userName
+            // userNameLabel
             // 
-            this.userName.AutoSize = true;
-            this.userName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userName.Location = new System.Drawing.Point(67, 118);
-            this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(121, 26);
-            this.userName.TabIndex = 2;
-            this.userName.Text = "Username";
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLabel.Location = new System.Drawing.Point(67, 118);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(121, 26);
+            this.userNameLabel.TabIndex = 2;
+            this.userNameLabel.Text = "Username";
             // 
             // passwordLabel
             // 
@@ -122,7 +122,7 @@
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.userNameInput);
             this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.userName);
+            this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.WelcomeLabel);
             this.Name = "loginForm";
             this.Text = "Login";
@@ -133,7 +133,7 @@
 
         #endregion
         private System.Windows.Forms.Label WelcomeLabel;
-        private System.Windows.Forms.Label userName;
+        private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox userNameInput;
         private System.Windows.Forms.TextBox passwordInput;
