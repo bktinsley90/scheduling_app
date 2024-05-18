@@ -49,6 +49,7 @@
             // 
             // ApptGridView
             // 
+            this.ApptGridView.AllowUserToAddRows = false;
             this.ApptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ApptGridView.Location = new System.Drawing.Point(422, 37);
             this.ApptGridView.Name = "ApptGridView";

@@ -18,6 +18,7 @@ namespace BrittanyT_wguC969
         {
             InitializeComponent();
             LoadCustomerData();
+            LoadAppointmentData();
         }
         private void LoadCustomerData()
         {
@@ -53,6 +54,44 @@ namespace BrittanyT_wguC969
                 MessageBox.Show($"Error loading customer data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void LoadAppointmentData()
+        {
+            try
+            { 
+                // Create a query to select appointment details
+                string query = @"
+                SELECT 
+                    appointmentId,
+                    customerId,
+                    title,
+                    description,
+                    location,
+                    contact,
+                    type,
+                    start,
+                    end 
+                FROM 
+                    appointment";
+
+                // Create a MySqlDataAdapter to execute the query and fill the DataTable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, DBConnection.conn);
+
+                // Create a DataTable to hold the data
+                DataTable dataTable = new DataTable();
+
+                // Fill the DataTable with the data from the database
+                dataAdapter.Fill(dataTable);
+
+                // Bind the DataTable to the DataGridView
+                ApptGridView.DataSource = dataTable;
+                CustomizeDataGridView(ApptGridView);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error loading appointment data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void CustomizeDataGridView(DataGridView dataGridView)
         {
             dataGridView.AutoGenerateColumns = true;
