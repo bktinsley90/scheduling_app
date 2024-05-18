@@ -101,5 +101,13 @@ namespace BrittanyT_wguC969
             dataGridView.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
         }
 
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var loginForm = new loginForm();
+            loginForm.Show();
+        }
+
     }
 }

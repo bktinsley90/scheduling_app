@@ -51,9 +51,10 @@
             // 
             this.ApptGridView.AllowUserToAddRows = false;
             this.ApptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ApptGridView.Location = new System.Drawing.Point(422, 37);
+            this.ApptGridView.Location = new System.Drawing.Point(374, 37);
             this.ApptGridView.Name = "ApptGridView";
-            this.ApptGridView.Size = new System.Drawing.Size(582, 346);
+            this.ApptGridView.ReadOnly = true;
+            this.ApptGridView.Size = new System.Drawing.Size(630, 346);
             this.ApptGridView.TabIndex = 0;
             // 
             // CustomerGridView
@@ -62,14 +63,15 @@
             this.CustomerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CustomerGridView.Location = new System.Drawing.Point(28, 37);
             this.CustomerGridView.Name = "CustomerGridView";
-            this.CustomerGridView.Size = new System.Drawing.Size(306, 346);
+            this.CustomerGridView.ReadOnly = true;
+            this.CustomerGridView.Size = new System.Drawing.Size(303, 346);
             this.CustomerGridView.TabIndex = 1;
             // 
             // apptLabel
             // 
             this.apptLabel.AutoSize = true;
             this.apptLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apptLabel.Location = new System.Drawing.Point(418, 9);
+            this.apptLabel.Location = new System.Drawing.Point(370, 9);
             this.apptLabel.Name = "apptLabel";
             this.apptLabel.Size = new System.Drawing.Size(138, 24);
             this.apptLabel.TabIndex = 2;
@@ -87,7 +89,7 @@
             // 
             // UpdateApptBtn
             // 
-            this.UpdateApptBtn.Location = new System.Drawing.Point(503, 389);
+            this.UpdateApptBtn.Location = new System.Drawing.Point(455, 389);
             this.UpdateApptBtn.Name = "UpdateApptBtn";
             this.UpdateApptBtn.Size = new System.Drawing.Size(75, 23);
             this.UpdateApptBtn.TabIndex = 4;
@@ -96,7 +98,7 @@
             // 
             // DeleteApptBtn
             // 
-            this.DeleteApptBtn.Location = new System.Drawing.Point(584, 389);
+            this.DeleteApptBtn.Location = new System.Drawing.Point(536, 389);
             this.DeleteApptBtn.Name = "DeleteApptBtn";
             this.DeleteApptBtn.Size = new System.Drawing.Size(75, 23);
             this.DeleteApptBtn.TabIndex = 5;
@@ -105,7 +107,7 @@
             // 
             // AddApptBtn
             // 
-            this.AddApptBtn.Location = new System.Drawing.Point(422, 389);
+            this.AddApptBtn.Location = new System.Drawing.Point(374, 389);
             this.AddApptBtn.Name = "AddApptBtn";
             this.AddApptBtn.Size = new System.Drawing.Size(75, 23);
             this.AddApptBtn.TabIndex = 6;
@@ -147,6 +149,7 @@
             this.LogOutBtn.TabIndex = 10;
             this.LogOutBtn.Text = "LogOut";
             this.LogOutBtn.UseVisualStyleBackColor = true;
+            this.LogOutBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // Reports
             // 
