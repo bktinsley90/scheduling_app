@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ApptGridView = new System.Windows.Forms.DataGridView();
+            this.CustomerGridView = new System.Windows.Forms.DataGridView();
             this.apptLabel = new System.Windows.Forms.Label();
             this.CustomersLabel = new System.Windows.Forms.Label();
             this.UpdateApptBtn = new System.Windows.Forms.Button();
@@ -43,25 +43,26 @@
             this.CurrWeekBtn = new System.Windows.Forms.RadioButton();
             this.CurrMonthBtn = new System.Windows.Forms.RadioButton();
             this.AllApptsBtn = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApptGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // ApptGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(422, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(582, 346);
-            this.dataGridView1.TabIndex = 0;
+            this.ApptGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ApptGridView.Location = new System.Drawing.Point(422, 37);
+            this.ApptGridView.Name = "ApptGridView";
+            this.ApptGridView.Size = new System.Drawing.Size(582, 346);
+            this.ApptGridView.TabIndex = 0;
             // 
-            // dataGridView2
+            // CustomerGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(28, 37);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(357, 346);
-            this.dataGridView2.TabIndex = 1;
+            this.CustomerGridView.AllowUserToAddRows = false;
+            this.CustomerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CustomerGridView.Location = new System.Drawing.Point(28, 37);
+            this.CustomerGridView.Name = "CustomerGridView";
+            this.CustomerGridView.Size = new System.Drawing.Size(306, 346);
+            this.CustomerGridView.TabIndex = 1;
             // 
             // apptLabel
             // 
@@ -206,12 +207,12 @@
             this.Controls.Add(this.UpdateApptBtn);
             this.Controls.Add(this.CustomersLabel);
             this.Controls.Add(this.apptLabel);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.CustomerGridView);
+            this.Controls.Add(this.ApptGridView);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApptGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,8 +220,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView ApptGridView;
+        private System.Windows.Forms.DataGridView CustomerGridView;
         private System.Windows.Forms.Label apptLabel;
         private System.Windows.Forms.Label CustomersLabel;
         private System.Windows.Forms.Button UpdateApptBtn;
