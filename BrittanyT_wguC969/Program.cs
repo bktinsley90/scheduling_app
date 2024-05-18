@@ -20,8 +20,7 @@ namespace BrittanyT_wguC969
             Application.SetCompatibleTextRenderingDefault(false);
 
             DBConnection.startConnection();
-            MySqlConnection conn = DBConnection.conn;
-            Application.Run(new loginForm(conn));
+            Application.Run(new loginForm());
             DBConnection.closeConnection();
         }
     }
