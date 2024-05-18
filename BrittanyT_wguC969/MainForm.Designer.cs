@@ -30,19 +30,19 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.apptLabel = new System.Windows.Forms.Label();
+            this.CustomersLabel = new System.Windows.Forms.Label();
+            this.UpdateApptBtn = new System.Windows.Forms.Button();
+            this.DeleteApptBtn = new System.Windows.Forms.Button();
+            this.AddApptBtn = new System.Windows.Forms.Button();
+            this.AddCustomerBtn = new System.Windows.Forms.Button();
+            this.UpdateCustomerBtn = new System.Windows.Forms.Button();
+            this.DeleteCustomerBtn = new System.Windows.Forms.Button();
+            this.LogOutBtn = new System.Windows.Forms.Button();
+            this.Reports = new System.Windows.Forms.Button();
+            this.CurrWeekBtn = new System.Windows.Forms.RadioButton();
+            this.CurrMonthBtn = new System.Windows.Forms.RadioButton();
+            this.AllApptsBtn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -63,147 +63,149 @@
             this.dataGridView2.Size = new System.Drawing.Size(357, 346);
             this.dataGridView2.TabIndex = 1;
             // 
-            // label1
+            // apptLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(419, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.apptLabel.AutoSize = true;
+            this.apptLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apptLabel.Location = new System.Drawing.Point(418, 9);
+            this.apptLabel.Name = "apptLabel";
+            this.apptLabel.Size = new System.Drawing.Size(138, 24);
+            this.apptLabel.TabIndex = 2;
+            this.apptLabel.Text = "Appointments";
             // 
-            // label2
+            // CustomersLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.CustomersLabel.AutoSize = true;
+            this.CustomersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomersLabel.Location = new System.Drawing.Point(24, 9);
+            this.CustomersLabel.Name = "CustomersLabel";
+            this.CustomersLabel.Size = new System.Drawing.Size(109, 24);
+            this.CustomersLabel.TabIndex = 3;
+            this.CustomersLabel.Text = "Customers";
             // 
-            // button1
+            // UpdateApptBtn
             // 
-            this.button1.Location = new System.Drawing.Point(503, 389);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.UpdateApptBtn.Location = new System.Drawing.Point(503, 389);
+            this.UpdateApptBtn.Name = "UpdateApptBtn";
+            this.UpdateApptBtn.Size = new System.Drawing.Size(75, 23);
+            this.UpdateApptBtn.TabIndex = 4;
+            this.UpdateApptBtn.Text = "Update";
+            this.UpdateApptBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // DeleteApptBtn
             // 
-            this.button2.Location = new System.Drawing.Point(584, 389);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.DeleteApptBtn.Location = new System.Drawing.Point(584, 389);
+            this.DeleteApptBtn.Name = "DeleteApptBtn";
+            this.DeleteApptBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeleteApptBtn.TabIndex = 5;
+            this.DeleteApptBtn.Text = "Delete";
+            this.DeleteApptBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // AddApptBtn
             // 
-            this.button3.Location = new System.Drawing.Point(422, 389);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AddApptBtn.Location = new System.Drawing.Point(422, 389);
+            this.AddApptBtn.Name = "AddApptBtn";
+            this.AddApptBtn.Size = new System.Drawing.Size(75, 23);
+            this.AddApptBtn.TabIndex = 6;
+            this.AddApptBtn.Text = "Add";
+            this.AddApptBtn.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // AddCustomerBtn
             // 
-            this.button4.Location = new System.Drawing.Point(28, 389);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.AddCustomerBtn.Location = new System.Drawing.Point(28, 389);
+            this.AddCustomerBtn.Name = "AddCustomerBtn";
+            this.AddCustomerBtn.Size = new System.Drawing.Size(75, 23);
+            this.AddCustomerBtn.TabIndex = 7;
+            this.AddCustomerBtn.Text = "Add";
+            this.AddCustomerBtn.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // UpdateCustomerBtn
             // 
-            this.button5.Location = new System.Drawing.Point(109, 389);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.UpdateCustomerBtn.Location = new System.Drawing.Point(109, 389);
+            this.UpdateCustomerBtn.Name = "UpdateCustomerBtn";
+            this.UpdateCustomerBtn.Size = new System.Drawing.Size(75, 23);
+            this.UpdateCustomerBtn.TabIndex = 8;
+            this.UpdateCustomerBtn.Text = "Update";
+            this.UpdateCustomerBtn.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // DeleteCustomerBtn
             // 
-            this.button6.Location = new System.Drawing.Point(190, 389);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.DeleteCustomerBtn.Location = new System.Drawing.Point(190, 389);
+            this.DeleteCustomerBtn.Name = "DeleteCustomerBtn";
+            this.DeleteCustomerBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeleteCustomerBtn.TabIndex = 9;
+            this.DeleteCustomerBtn.Text = "Delete";
+            this.DeleteCustomerBtn.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // LogOutBtn
             // 
-            this.button7.Location = new System.Drawing.Point(929, 414);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.LogOutBtn.Location = new System.Drawing.Point(929, 414);
+            this.LogOutBtn.Name = "LogOutBtn";
+            this.LogOutBtn.Size = new System.Drawing.Size(75, 23);
+            this.LogOutBtn.TabIndex = 10;
+            this.LogOutBtn.Text = "LogOut";
+            this.LogOutBtn.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // Reports
             // 
-            this.button8.Location = new System.Drawing.Point(848, 414);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 11;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.Reports.Location = new System.Drawing.Point(848, 414);
+            this.Reports.Name = "Reports";
+            this.Reports.Size = new System.Drawing.Size(75, 23);
+            this.Reports.TabIndex = 11;
+            this.Reports.Text = "Reports";
+            this.Reports.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // CurrWeekBtn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(707, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.CurrWeekBtn.AutoSize = true;
+            this.CurrWeekBtn.Location = new System.Drawing.Point(707, 12);
+            this.CurrWeekBtn.Name = "CurrWeekBtn";
+            this.CurrWeekBtn.Size = new System.Drawing.Size(91, 17);
+            this.CurrWeekBtn.TabIndex = 12;
+            this.CurrWeekBtn.TabStop = true;
+            this.CurrWeekBtn.Text = "Current Week";
+            this.CurrWeekBtn.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // CurrMonthBtn
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(809, 12);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.CurrMonthBtn.AutoSize = true;
+            this.CurrMonthBtn.Location = new System.Drawing.Point(809, 12);
+            this.CurrMonthBtn.Name = "CurrMonthBtn";
+            this.CurrMonthBtn.Size = new System.Drawing.Size(92, 17);
+            this.CurrMonthBtn.TabIndex = 13;
+            this.CurrMonthBtn.TabStop = true;
+            this.CurrMonthBtn.Text = "Current Month";
+            this.CurrMonthBtn.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // AllApptsBtn
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(909, 12);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
-            this.radioButton3.TabIndex = 14;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.AllApptsBtn.AutoSize = true;
+            this.AllApptsBtn.Location = new System.Drawing.Point(909, 12);
+            this.AllApptsBtn.Name = "AllApptsBtn";
+            this.AllApptsBtn.Size = new System.Drawing.Size(103, 17);
+            this.AllApptsBtn.TabIndex = 14;
+            this.AllApptsBtn.TabStop = true;
+            this.AllApptsBtn.Text = "All Appointments";
+            this.AllApptsBtn.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 454);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1035, 454);
+            this.Controls.Add(this.AllApptsBtn);
+            this.Controls.Add(this.CurrMonthBtn);
+            this.Controls.Add(this.CurrWeekBtn);
+            this.Controls.Add(this.Reports);
+            this.Controls.Add(this.LogOutBtn);
+            this.Controls.Add(this.DeleteCustomerBtn);
+            this.Controls.Add(this.UpdateCustomerBtn);
+            this.Controls.Add(this.AddCustomerBtn);
+            this.Controls.Add(this.AddApptBtn);
+            this.Controls.Add(this.DeleteApptBtn);
+            this.Controls.Add(this.UpdateApptBtn);
+            this.Controls.Add(this.CustomersLabel);
+            this.Controls.Add(this.apptLabel);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "MainForm";
@@ -219,18 +221,18 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Label apptLabel;
+        private System.Windows.Forms.Label CustomersLabel;
+        private System.Windows.Forms.Button UpdateApptBtn;
+        private System.Windows.Forms.Button DeleteApptBtn;
+        private System.Windows.Forms.Button AddApptBtn;
+        private System.Windows.Forms.Button AddCustomerBtn;
+        private System.Windows.Forms.Button UpdateCustomerBtn;
+        private System.Windows.Forms.Button DeleteCustomerBtn;
+        private System.Windows.Forms.Button LogOutBtn;
+        private System.Windows.Forms.Button Reports;
+        private System.Windows.Forms.RadioButton CurrWeekBtn;
+        private System.Windows.Forms.RadioButton CurrMonthBtn;
+        private System.Windows.Forms.RadioButton AllApptsBtn;
     }
 }
