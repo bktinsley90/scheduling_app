@@ -64,7 +64,7 @@
             this.CustomerGridView.Location = new System.Drawing.Point(28, 37);
             this.CustomerGridView.Name = "CustomerGridView";
             this.CustomerGridView.ReadOnly = true;
-            this.CustomerGridView.Size = new System.Drawing.Size(303, 346);
+            this.CustomerGridView.Size = new System.Drawing.Size(318, 346);
             this.CustomerGridView.TabIndex = 1;
             // 
             // apptLabel

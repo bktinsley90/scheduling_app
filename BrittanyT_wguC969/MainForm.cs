@@ -28,6 +28,7 @@ namespace BrittanyT_wguC969
                 // Create a query to select customer name, address, and phone
                 string query = @"
                 SELECT 
+                    c.customerId,
                     c.customerName, 
                     a.address, 
                     a.phone 
@@ -98,7 +99,7 @@ namespace BrittanyT_wguC969
         }
         private void UpdateCustomerGridView()
         {
-            string query = "SELECT customerName, address, phone FROM customer c JOIN address a ON c.addressId = a.addressId";
+            string query = "SELECT customerId, customerName, address, phone FROM customer c JOIN address a ON c.addressId = a.addressId";
             DataTable dataTable = new DataTable();
 
             using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, DBConnection.conn))
@@ -158,9 +159,8 @@ namespace BrittanyT_wguC969
                 using (MySqlCommand cmd = new MySqlCommand("DELETE FROM customer WHERE customerId = @customerId", DBConnection.conn))
                 {
                     cmd.Parameters.AddWithValue("@customerId", customerId);
-                    DBConnection.conn.Open();
                     cmd.ExecuteNonQuery();
-                    DBConnection.conn.Close();
+                    
                 }
 
                 MessageBox.Show("Customer deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
