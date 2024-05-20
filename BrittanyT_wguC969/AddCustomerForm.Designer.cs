@@ -43,8 +43,10 @@
             this.PhoneNumberInput = new System.Windows.Forms.TextBox();
             this.StateInput = new System.Windows.Forms.TextBox();
             this.PostalCodeInput = new System.Windows.Forms.TextBox();
-            this.CountyInput = new System.Windows.Forms.TextBox();
+            this.CountryInput = new System.Windows.Forms.TextBox();
             this.PostalCodeLabel = new System.Windows.Forms.Label();
+            this.CityLabel = new System.Windows.Forms.Label();
+            this.CityInput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -101,7 +103,7 @@
             // 
             this.CountryLabel.AutoSize = true;
             this.CountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CountryLabel.Location = new System.Drawing.Point(132, 309);
+            this.CountryLabel.Location = new System.Drawing.Point(132, 341);
             this.CountryLabel.Name = "CountryLabel";
             this.CountryLabel.Size = new System.Drawing.Size(57, 17);
             this.CountryLabel.TabIndex = 5;
@@ -111,7 +113,7 @@
             // 
             this.StateLabel.AutoSize = true;
             this.StateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StateLabel.Location = new System.Drawing.Point(148, 230);
+            this.StateLabel.Location = new System.Drawing.Point(148, 268);
             this.StateLabel.Name = "StateLabel";
             this.StateLabel.Size = new System.Drawing.Size(41, 17);
             this.StateLabel.TabIndex = 6;
@@ -125,6 +127,7 @@
             this.SaveCustomerBtn.TabIndex = 7;
             this.SaveCustomerBtn.Text = "Save";
             this.SaveCustomerBtn.UseVisualStyleBackColor = true;
+            this.SaveCustomerBtn.Click += new System.EventHandler(this.SaveCustomerBtn_Click);
             // 
             // CancelCustomerBtn
             // 
@@ -134,6 +137,7 @@
             this.CancelCustomerBtn.TabIndex = 8;
             this.CancelCustomerBtn.Text = "Cancel";
             this.CancelCustomerBtn.UseVisualStyleBackColor = true;
+            this.CancelCustomerBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // CustomerIdInput
             // 
@@ -166,42 +170,61 @@
             // 
             // StateInput
             // 
-            this.StateInput.Location = new System.Drawing.Point(199, 227);
+            this.StateInput.Location = new System.Drawing.Point(199, 268);
             this.StateInput.Name = "StateInput";
             this.StateInput.Size = new System.Drawing.Size(100, 20);
             this.StateInput.TabIndex = 13;
             // 
             // PostalCodeInput
             // 
-            this.PostalCodeInput.Location = new System.Drawing.Point(199, 264);
+            this.PostalCodeInput.Location = new System.Drawing.Point(199, 303);
             this.PostalCodeInput.Name = "PostalCodeInput";
             this.PostalCodeInput.Size = new System.Drawing.Size(100, 20);
             this.PostalCodeInput.TabIndex = 14;
             // 
-            // CountyInput
+            // CountryInput
             // 
-            this.CountyInput.Location = new System.Drawing.Point(199, 309);
-            this.CountyInput.Name = "CountyInput";
-            this.CountyInput.Size = new System.Drawing.Size(100, 20);
-            this.CountyInput.TabIndex = 15;
+            this.CountryInput.Location = new System.Drawing.Point(199, 338);
+            this.CountryInput.Name = "CountryInput";
+            this.CountryInput.Size = new System.Drawing.Size(100, 20);
+            this.CountryInput.TabIndex = 15;
             // 
             // PostalCodeLabel
             // 
             this.PostalCodeLabel.AutoSize = true;
             this.PostalCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PostalCodeLabel.Location = new System.Drawing.Point(105, 264);
+            this.PostalCodeLabel.Location = new System.Drawing.Point(105, 303);
             this.PostalCodeLabel.Name = "PostalCodeLabel";
             this.PostalCodeLabel.Size = new System.Drawing.Size(84, 17);
             this.PostalCodeLabel.TabIndex = 16;
             this.PostalCodeLabel.Text = "Postal Code";
+            // 
+            // CityLabel
+            // 
+            this.CityLabel.AutoSize = true;
+            this.CityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityLabel.Location = new System.Drawing.Point(154, 236);
+            this.CityLabel.Name = "CityLabel";
+            this.CityLabel.Size = new System.Drawing.Size(31, 17);
+            this.CityLabel.TabIndex = 17;
+            this.CityLabel.Text = "City";
+            // 
+            // CityInput
+            // 
+            this.CityInput.Location = new System.Drawing.Point(199, 228);
+            this.CityInput.Name = "CityInput";
+            this.CityInput.Size = new System.Drawing.Size(100, 20);
+            this.CityInput.TabIndex = 18;
             // 
             // AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 421);
+            this.Controls.Add(this.CityInput);
+            this.Controls.Add(this.CityLabel);
             this.Controls.Add(this.PostalCodeLabel);
-            this.Controls.Add(this.CountyInput);
+            this.Controls.Add(this.CountryInput);
             this.Controls.Add(this.PostalCodeInput);
             this.Controls.Add(this.StateInput);
             this.Controls.Add(this.PhoneNumberInput);
@@ -241,7 +264,9 @@
         private System.Windows.Forms.TextBox PhoneNumberInput;
         private System.Windows.Forms.TextBox StateInput;
         private System.Windows.Forms.TextBox PostalCodeInput;
-        private System.Windows.Forms.TextBox CountyInput;
+        private System.Windows.Forms.TextBox CountryInput;
         private System.Windows.Forms.Label PostalCodeLabel;
+        private System.Windows.Forms.Label CityLabel;
+        private System.Windows.Forms.TextBox CityInput;
     }
 }

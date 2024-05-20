@@ -91,7 +91,24 @@ namespace BrittanyT_wguC969
                 MessageBox.Show($"Error loading appointment data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //updating CustomerGridView
+        private void AddCustomerForm_CustomerAdded(object sender, EventArgs e)
+        {
+            UpdateCustomerGridView();
+        }
+        private void UpdateCustomerGridView()
+        {
+            string query = "SELECT customerName, address, phone FROM customer c JOIN address a ON c.addressId = a.addressId";
+            DataTable dataTable = new DataTable();
 
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, DBConnection.conn))
+            {
+                adapter.Fill(dataTable);
+            }
+
+            CustomerGridView.DataSource = dataTable;
+            CustomizeDataGridView(CustomerGridView);
+        }
         private void CustomizeDataGridView(DataGridView dataGridView)
         {
             dataGridView.AutoGenerateColumns = true;
@@ -100,7 +117,13 @@ namespace BrittanyT_wguC969
             dataGridView.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
             dataGridView.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
         }
+        private void AddCustomerBtn_Click(object sender, EventArgs e)
+        {
+            AddCustomerForm addCustomerForm = new AddCustomerForm();
+            addCustomerForm.CustomerAdded += AddCustomerForm_CustomerAdded;
+            addCustomerForm.ShowDialog();
 
+        }
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {

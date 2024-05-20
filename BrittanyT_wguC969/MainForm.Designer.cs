@@ -122,6 +122,7 @@
             this.AddCustomerBtn.TabIndex = 7;
             this.AddCustomerBtn.Text = "Add";
             this.AddCustomerBtn.UseVisualStyleBackColor = true;
+            this.AddCustomerBtn.Click += new System.EventHandler(this.AddCustomerBtn_Click);
             // 
             // UpdateCustomerBtn
             // 
