@@ -62,7 +62,7 @@ namespace BrittanyT_wguC969
                         // Create country, city, and address records
                         int countryID = createCountry(country, transaction);
                         int cityID = createCity(countryID, city, transaction);
-                        int addressID = createAddress(cityID, address, postalCode, phone, transaction);
+                        int addressID = createAddress(cityID, address, state, postalCode, phone, transaction);
 
                         // Create customer record
                         int customerID = getID("customer", "customerId", transaction) + 1;
@@ -99,7 +99,7 @@ namespace BrittanyT_wguC969
             CountryInput.Text = string.Empty;
             CityInput.Text = string.Empty;
             PostalCodeInput.Text = string.Empty;
-            StateInput.Text = string.Empty; // Assuming you have a state input
+            StateInput.Text = string.Empty; 
         }
 
         
@@ -140,12 +140,12 @@ namespace BrittanyT_wguC969
             return cityID;
         }
 
-        private int createAddress(int cityID, string address, string postalCode, string phone, MySqlTransaction transaction)
+        private int createAddress(int cityID, string address, string state, string postalCode, string phone, MySqlTransaction transaction)
         {
             int addressID = getID("address", "addressId", transaction) + 1;
             string user = getCurrentUserName();
             DateTime utc = DateTime.UtcNow;
-            string address2 = "";
+            string address2 = state;
 
             var query = "INSERT INTO address (addressId, address, address2, cityId, postalCode, phone, createDate, createdBy, lastUpdateBy) " +
                         $"VALUES ('{addressID}', '{address}', '{address2}','{cityID}', '{postalCode}', '{phone}', '{dateSQLFormat(utc)}', '{user}', '{user}')";

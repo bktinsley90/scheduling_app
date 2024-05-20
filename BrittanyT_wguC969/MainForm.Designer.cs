@@ -132,6 +132,7 @@
             this.UpdateCustomerBtn.TabIndex = 8;
             this.UpdateCustomerBtn.Text = "Update";
             this.UpdateCustomerBtn.UseVisualStyleBackColor = true;
+            this.UpdateCustomerBtn.Click += new System.EventHandler(this.UpdateCustomerBtn_Click);
             // 
             // DeleteCustomerBtn
             // 

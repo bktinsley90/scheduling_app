@@ -118,12 +118,87 @@ namespace BrittanyT_wguC969
             dataGridView.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
             dataGridView.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
         }
+        //Adding Customer
         private void AddCustomerBtn_Click(object sender, EventArgs e)
         {
             AddCustomerForm addCustomerForm = new AddCustomerForm();
             addCustomerForm.CustomerAdded += AddCustomerForm_CustomerAdded;
             addCustomerForm.ShowDialog();
 
+        }
+        //Updating Customer
+        private void UpdateCustomerBtn_Click(object sender, EventArgs e)
+        {
+            // Ensure a customer is selected
+            if (CustomerGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a customer to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int selectedCustomerId = Convert.ToInt32(CustomerGridView.SelectedRows[0].Cells["customerId"].Value);
+
+            // Get customer details
+            var customerDetails = GetCustomerDetails(selectedCustomerId);
+
+            if (customerDetails != null)
+            {
+                UpdateCustomerForm updateCustomerForm = new UpdateCustomerForm(customerDetails);
+                updateCustomerForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Customer details could not be retrieved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            // Refresh the CustomerGridView after updating the customer
+            //UpdateCustomerGridView();
+        }
+        // Function to get customer details
+        private Dictionary<string, string> GetCustomerDetails(int customerId)
+        {
+            Dictionary<string, string> customerDetails = new Dictionary<string, string>();
+
+            try
+            {
+                
+                string query = @"
+                SELECT 
+                    c.customerId, c.customerName, a.address, a.phone, a.postalCode, a.address2, 
+                    ci.city, co.country 
+                FROM customer c
+                JOIN address a ON c.addressId = a.addressId
+                JOIN city ci ON a.cityId = ci.cityId
+                JOIN country co ON ci.countryId = co.countryId
+                WHERE c.customerId = @customerId";
+
+                    MySqlCommand cmd = new MySqlCommand(query, DBConnection.conn);
+                    cmd.Parameters.AddWithValue("@customerId", customerId);
+
+                   
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+                            customerDetails["customerId"] = reader["customerId"].ToString();
+                            customerDetails["customerName"] = reader["customerName"].ToString();
+                            customerDetails["address"] = reader["address"].ToString();
+                            customerDetails["phone"] = reader["phone"].ToString();
+                            customerDetails["postalCode"] = reader["postalCode"].ToString();
+                            customerDetails["address2"] = reader["address2"].ToString();
+                            customerDetails["city"] = reader["city"].ToString();
+                            customerDetails["country"] = reader["country"].ToString();
+                        }
+                    }
+                
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error retrieving customer details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return customerDetails;
         }
 
 
