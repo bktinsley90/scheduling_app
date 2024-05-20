@@ -141,6 +141,7 @@
             this.DeleteCustomerBtn.TabIndex = 9;
             this.DeleteCustomerBtn.Text = "Delete";
             this.DeleteCustomerBtn.UseVisualStyleBackColor = true;
+            this.DeleteCustomerBtn.Click += new System.EventHandler(this.DeleteCustomerBtn_Click);
             // 
             // LogOutBtn
             // 

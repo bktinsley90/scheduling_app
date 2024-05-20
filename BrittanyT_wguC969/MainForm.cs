@@ -125,6 +125,52 @@ namespace BrittanyT_wguC969
 
         }
 
+
+        //delete customer 
+        private void DeleteCustomerBtn_Click(object sender, EventArgs e)
+        {
+            // Ensure a customer is selected
+            if (CustomerGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a customer to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Confirm deletion
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this customer?", "Confirm Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // Get the selected customer ID
+                int selectedRowIndex = CustomerGridView.SelectedRows[0].Index;
+                int customerId = Convert.ToInt32(CustomerGridView.Rows[selectedRowIndex].Cells["customerId"].Value);
+
+                // Delete the customer from the database
+                DeleteCustomer(customerId);
+
+                // Refresh the CustomerGridView
+                UpdateCustomerGridView();
+            }
+        }
+        private void DeleteCustomer(int customerId)
+        {
+            try
+            {
+                using (MySqlCommand cmd = new MySqlCommand("DELETE FROM customer WHERE customerId = @customerId", DBConnection.conn))
+                {
+                    cmd.Parameters.AddWithValue("@customerId", customerId);
+                    DBConnection.conn.Open();
+                    cmd.ExecuteNonQuery();
+                    DBConnection.conn.Close();
+                }
+
+                MessageBox.Show("Customer deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             this.Close();
