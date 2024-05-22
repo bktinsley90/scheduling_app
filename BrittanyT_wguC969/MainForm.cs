@@ -143,16 +143,14 @@ namespace BrittanyT_wguC969
             if (customerDetails != null)
             {
                 UpdateCustomerForm updateCustomerForm = new UpdateCustomerForm(customerDetails);
+                updateCustomerForm.CustomerUpdated += UpdateForm_CustomerUpdated;
                 updateCustomerForm.Show();
             }
             else
             {
                 MessageBox.Show("Customer details could not be retrieved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-            // Refresh the CustomerGridView after updating the customer
-            //UpdateCustomerGridView();
+            
         }
         // Function to get customer details
         private Dictionary<string, string> GetCustomerDetails(int customerId)
@@ -200,7 +198,10 @@ namespace BrittanyT_wguC969
 
             return customerDetails;
         }
-
+        private void UpdateForm_CustomerUpdated(object sender, EventArgs e)
+        {
+            UpdateCustomerGridView();
+        }
 
         //delete customer 
         private void DeleteCustomerBtn_Click(object sender, EventArgs e)

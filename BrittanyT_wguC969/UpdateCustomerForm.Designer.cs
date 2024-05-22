@@ -67,6 +67,7 @@
             this.SaveCustomerBtn.TabIndex = 1;
             this.SaveCustomerBtn.Text = "Save";
             this.SaveCustomerBtn.UseVisualStyleBackColor = true;
+            this.SaveCustomerBtn.Click += new System.EventHandler(this.SaveCustomerBtn_Click);
             // 
             // CancelCustomerBtn
             // 
@@ -76,6 +77,7 @@
             this.CancelCustomerBtn.TabIndex = 2;
             this.CancelCustomerBtn.Text = "Cancel";
             this.CancelCustomerBtn.UseVisualStyleBackColor = true;
+            this.CancelCustomerBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // IdLabel
             // 
