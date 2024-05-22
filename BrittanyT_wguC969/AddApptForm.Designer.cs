@@ -254,31 +254,6 @@
             // StartTime
             // 
             this.StartTime.FormattingEnabled = true;
-            this.StartTime.Items.AddRange(new object[] {
-            "00:00",
-            "01:00",
-            "02:00",
-            "03:00",
-            "04:00",
-            "05:00",
-            "06:00",
-            "07:00",
-            "08:00",
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00",
-            "21:00",
-            "22:00",
-            "23:00"});
             this.StartTime.Location = new System.Drawing.Point(197, 322);
             this.StartTime.Name = "StartTime";
             this.StartTime.Size = new System.Drawing.Size(121, 21);
@@ -294,31 +269,6 @@
             // EndTime
             // 
             this.EndTime.FormattingEnabled = true;
-            this.EndTime.Items.AddRange(new object[] {
-            "00:00",
-            "01:00",
-            "02:00",
-            "03:00",
-            "04:00",
-            "05:00",
-            "06:00",
-            "07:00",
-            "08:00",
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00",
-            "21:00",
-            "22:00",
-            "23:00"});
             this.EndTime.Location = new System.Drawing.Point(197, 395);
             this.EndTime.Name = "EndTime";
             this.EndTime.Size = new System.Drawing.Size(121, 21);

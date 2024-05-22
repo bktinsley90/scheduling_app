@@ -19,6 +19,8 @@ namespace BrittanyT_wguC969
         public AddApptForm()
         {
             InitializeComponent();
+
+            PopulateTimeComboBoxes();
             FillCustomerIdComboBox();
             FillUserIdComboBox();
             FillContactComboBox();
@@ -52,6 +54,36 @@ namespace BrittanyT_wguC969
                 return 0;
             
         }
+        public static List<string> List24HoursWithHalfHours()
+        {
+            List<string> times = new List<string>();
+
+            for (int i = 0; i < 24; i++)
+            {
+                // Add leading zero to single digit hours
+                string hour = i.ToString("D2");
+
+                // Add full hour
+                times.Add(hour + ":00");
+
+                // Add half hour
+                times.Add(hour + ":30");
+            }
+
+            return times;
+        }
+
+        public void PopulateTimeComboBoxes()
+        {
+            List<string> times = List24HoursWithHalfHours();
+
+            foreach (string time in times)
+            {
+                StartTime.Items.Add(time);
+                EndTime.Items.Add(time);
+            }
+        }
+
         private void FillCustomerIdComboBox()
         {
             string query = "SELECT customerId FROM customer";
