@@ -246,7 +246,13 @@ namespace BrittanyT_wguC969
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Appointment Section
 
+        private void AddApptBtn_Click(object sender, EventArgs e)
+        {
+            AddApptForm addApptForm = new AddApptForm();
+            addApptForm.ShowDialog();
+        }
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -113,6 +113,7 @@
             this.AddApptBtn.TabIndex = 6;
             this.AddApptBtn.Text = "Add";
             this.AddApptBtn.UseVisualStyleBackColor = true;
+            this.AddApptBtn.Click += new System.EventHandler(this.AddApptBtn_Click);
             // 
             // AddCustomerBtn
             // 

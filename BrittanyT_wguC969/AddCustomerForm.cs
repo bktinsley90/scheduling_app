@@ -71,8 +71,7 @@ namespace BrittanyT_wguC969
                         transaction.Commit();
                         MessageBox.Show("Customer saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Clear the input fields after saving
-                        // ClearCustomerInputFields();
+                        
                         CustomerAdded?.Invoke(this, EventArgs.Empty);
                         this.Close();
                     }
@@ -88,18 +87,6 @@ namespace BrittanyT_wguC969
                 MessageBox.Show("An error occurred while connecting to the database: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
-        }
-
-        // Helper method to clear input fields
-        private void ClearCustomerInputFields()
-        {
-            CustomerNameInput.Text = string.Empty;
-            CustomerAddressInput.Text = string.Empty;
-            PhoneNumberInput.Text = string.Empty;
-            CountryInput.Text = string.Empty;
-            CityInput.Text = string.Empty;
-            PostalCodeInput.Text = string.Empty;
-            StateInput.Text = string.Empty; 
         }
 
         
