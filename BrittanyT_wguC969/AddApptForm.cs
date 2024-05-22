@@ -19,6 +19,10 @@ namespace BrittanyT_wguC969
         public AddApptForm()
         {
             InitializeComponent();
+            FillCustomerIdComboBox();
+            FillUserIdComboBox();
+            FillContactComboBox();
+
         }
         private static string dateSQLFormat(DateTime date)
         {
@@ -48,6 +52,74 @@ namespace BrittanyT_wguC969
                 return 0;
             
         }
+        private void FillCustomerIdComboBox()
+        {
+            string query = "SELECT customerId FROM customer";
+            using (MySqlCommand command = new MySqlCommand(query, DBConnection.conn))
+            {
+                try
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CustomerId.Items.Add(reader["customerId"].ToString());
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading Customer IDs: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+        private void FillUserIdComboBox()
+        {
+            string query = "SELECT userId FROM user";
+            using (MySqlCommand command = new MySqlCommand(query, DBConnection.conn))
+            {
+                try
+                {
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            UserId.Items.Add(reader["userId"].ToString());
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading User IDs: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+        }
+        private void FillContactComboBox()
+        {
+            string query = "SELECT contact FROM appointment"; // Assuming you have a contact table
+            using (MySqlCommand command = new MySqlCommand(query, DBConnection.conn))
+            {
+                try
+                {
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Contact.Items.Add(reader["contact"].ToString());
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading Contacts: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
 
         private void SaveApptBtn_Click(object sender, EventArgs e)
         {
