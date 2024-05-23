@@ -27,6 +27,7 @@ namespace BrittanyT_wguC969
         {
             InitializeComponent();
             LoadLanguage(CultureInfo.CurrentCulture);
+            AdjustTimeLabelToUserTimeZone();
         }
         private void LoadLanguage(CultureInfo cultureInfo)
         {
@@ -109,13 +110,17 @@ namespace BrittanyT_wguC969
                 MessageBox.Show($"Failed to log login: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void AdjustTimeLabelToUserTimeZone()
+        {
+            // Get the user's local time zone
+            TimeZoneInfo userTimeZone = TimeZoneInfo.Local;
+
+            // Display the time in the user's local time zone
+            TimeLabel.Text = $"{userTimeZone.StandardName}";
+        }
 
 
-    
-
-
-
-    private void CheckForUpcomingAppointments(int userId)
+        private void CheckForUpcomingAppointments(int userId)
         {
             DateTime now = DateTime.Now;
             DateTime fifteenMinutesLater = now.AddMinutes(15);
