@@ -191,7 +191,7 @@ namespace BrittanyT_wguC969
             int userID = int.Parse(UserId.SelectedItem.ToString());
 
             // Validate the input
-            if (ValidateAppointment(custID, title, description, location, contact, type, start, end))
+            if (ValidateAppointment(userID, title, description, location, contact, type, start, end))
             {
                 // Save to database
                 createAppointment(custID, title, description, location, contact, type, start, end, userID);
@@ -202,7 +202,7 @@ namespace BrittanyT_wguC969
             }
         }
 
-        private bool ValidateAppointment(int custID, string title, string description, string location, string contact, string type, DateTime start, DateTime end)
+        private bool ValidateAppointment( int userID, string title, string description, string location, string contact, string type, DateTime start, DateTime end)
         {
             // Check if required fields are non-empty
             if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(description) ||
@@ -224,7 +224,7 @@ namespace BrittanyT_wguC969
             }
 
             // Check for overlapping appointments
-            if (CheckForOverlappingAppointments(custID, start, end))
+            if (CheckForOverlappingAppointments(userID, start, end))
             {
                 MessageBox.Show("The appointment overlaps with another existing appointment.");
                 return false;
@@ -233,17 +233,27 @@ namespace BrittanyT_wguC969
             return true;
         }
 
-        private bool CheckForOverlappingAppointments(int custID, DateTime start, DateTime end)
+        private bool CheckForOverlappingAppointments(int userId, DateTime start, DateTime end)
         {
-                string query = "SELECT COUNT(*) FROM appointment WHERE customerId = @custID AND ((@start BETWEEN start AND end) OR (@end BETWEEN start AND end) OR (start BETWEEN @start AND @end) OR (end BETWEEN @start AND @end))";
-                MySqlCommand cmd = new MySqlCommand(query, DBConnection.conn);
-                cmd.Parameters.AddWithValue("@custID", custID);
+            string query = @"
+        SELECT COUNT(*) 
+        FROM appointment 
+        WHERE 
+            userId = @userId 
+            AND 
+            ((@start BETWEEN start AND end) OR (@end BETWEEN start AND end) OR (start BETWEEN @start AND @end) OR (end BETWEEN @start AND @end))";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, DBConnection.conn))
+            {
+                cmd.Parameters.AddWithValue("@userId", userId);
                 cmd.Parameters.AddWithValue("@start", start);
                 cmd.Parameters.AddWithValue("@end", end);
+
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
                 return count > 0;
-            
+            }
         }
+
         public static string GetUsernameByUserID(int userID)
         {
             string username = string.Empty;

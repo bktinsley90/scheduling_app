@@ -47,19 +47,20 @@ namespace BrittanyT_wguC969
 
             try
             {
-                string query = "SELECT COUNT(*) FROM User WHERE username = @username AND password = @password";
+                string query = "SELECT userId FROM User WHERE username = @username AND password = @password";
                 using (MySqlCommand cmd = new MySqlCommand(query, DBConnection.conn))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
 
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    if (count > 0)
+                    int userId = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (userId > 0)
                     {
 
                         MainForm mainForm = new MainForm();
                         mainForm.Show();
 
+                        CheckForUpcomingAppointments(userId);
                         this.Hide();
 
                     }
@@ -75,8 +76,40 @@ namespace BrittanyT_wguC969
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-      
-        private void ExitBtn_Click(object sender, EventArgs e)
+        private void CheckForUpcomingAppointments(int userId)
+        {
+            DateTime now = DateTime.Now;
+            DateTime fifteenMinutesLater = now.AddMinutes(15);
+
+            string query = @"
+            SELECT 
+                appointmentId, customerId, title, description, location, contact, type, start, end 
+            FROM 
+                appointment 
+            WHERE 
+                userId = @userId AND 
+                start BETWEEN @now AND @fifteenMinutesLater";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, DBConnection.conn))
+            {
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@now", now);
+                cmd.Parameters.AddWithValue("@fifteenMinutesLater", fifteenMinutesLater);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        string title = reader["title"].ToString();
+                        DateTime start = DateTime.Parse(reader["start"].ToString());
+                        MessageBox.Show($"You have an upcoming appointment titled '{title}' at {start}.", "Upcoming Appointment Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
+
+            private void ExitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

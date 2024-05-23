@@ -37,6 +37,7 @@
             this.exitBtn = new System.Windows.Forms.Button();
             this.timezoneLabel = new System.Windows.Forms.Label();
             this.label1TimeZone = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // userNameLabel
@@ -83,10 +84,16 @@
             resources.ApplyResources(this.label1TimeZone, "label1TimeZone");
             this.label1TimeZone.Name = "label1TimeZone";
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
             // loginForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label1TimeZone);
             this.Controls.Add(this.timezoneLabel);
             this.Controls.Add(this.exitBtn);
@@ -110,6 +117,7 @@
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Label timezoneLabel;
         private System.Windows.Forms.Label label1TimeZone;
+        private System.Windows.Forms.Label label1;
     }
 }
 
