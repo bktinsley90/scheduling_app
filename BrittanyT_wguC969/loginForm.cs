@@ -20,7 +20,8 @@ namespace BrittanyT_wguC969
 {
     public partial class loginForm : Form
     {
-       
+
+        
         private ResourceManager resourceManager;
         public loginForm()
         {
@@ -56,6 +57,7 @@ namespace BrittanyT_wguC969
                     int userId = Convert.ToInt32(cmd.ExecuteScalar());
                     if (userId > 0)
                     {
+                        LogLogin(username, true);
 
                         MainForm mainForm = new MainForm();
                         mainForm.Show();
@@ -66,6 +68,7 @@ namespace BrittanyT_wguC969
                     }
                     else
                     {
+                        LogLogin(username, false);
                         string errorMessage = resourceManager.GetString("errorMsg");
                         MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -76,7 +79,34 @@ namespace BrittanyT_wguC969
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void CheckForUpcomingAppointments(int userId)
+
+        private void LogLogin(string username, bool isSuccess)
+        {
+         
+            string logFilePath = "..\\..\\Login_History.txt";
+            string logEntry = isSuccess
+            ? $"User {username} logged in at {DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}"
+            : $"Failed login for user: {username} at {DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}";
+
+            try
+            {
+                using (StreamWriter userLoginFile = File.AppendText(logFilePath))
+                {
+                    userLoginFile.WriteLine(logEntry);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to log login: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+    
+
+
+
+    private void CheckForUpcomingAppointments(int userId)
         {
             DateTime now = DateTime.Now;
             DateTime fifteenMinutesLater = now.AddMinutes(15);
