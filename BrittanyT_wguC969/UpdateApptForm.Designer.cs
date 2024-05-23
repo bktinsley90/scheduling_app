@@ -195,6 +195,7 @@
             this.SaveApptBtn.TabIndex = 13;
             this.SaveApptBtn.Text = "Save";
             this.SaveApptBtn.UseVisualStyleBackColor = true;
+            this.SaveApptBtn.Click += new System.EventHandler(this.SaveApptBtn_Click);
             // 
             // CancelBtn
             // 
@@ -204,6 +205,7 @@
             this.CancelBtn.TabIndex = 14;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // ApptId
             // 

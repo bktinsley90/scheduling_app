@@ -95,6 +95,7 @@
             this.UpdateApptBtn.TabIndex = 4;
             this.UpdateApptBtn.Text = "Update";
             this.UpdateApptBtn.UseVisualStyleBackColor = true;
+            this.UpdateApptBtn.Click += new System.EventHandler(this.UpdateApptBtn_Click);
             // 
             // DeleteApptBtn
             // 

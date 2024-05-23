@@ -275,8 +275,77 @@ namespace BrittanyT_wguC969
         //Update Appt
         private void UpdateApptBtn_Click(object sender, EventArgs e)
         {
+            // Ensure an appointment is selected
+            if (ApptGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select an appointment to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int selectedApptId = Convert.ToInt32(ApptGridView.SelectedRows[0].Cells["appointmentId"].Value);
+
+            // Get appointment details
+            var apptDetails = GetAppointmentDetails(selectedApptId);
+
+            if (apptDetails != null)
+            {
+                UpdateApptForm updateApptForm = new UpdateApptForm(apptDetails);
+                updateApptForm.AppointmentUpdated += UpdateForm_AppointmentUpdated;
+                updateApptForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Appointment details could not be retrieved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
+        private Dictionary<string, string> GetAppointmentDetails(int appointmentId)
+        {
+            Dictionary<string, string> apptDetails = new Dictionary<string, string>();
+
+            try
+            {
+                string query = @"
+        SELECT 
+            appointmentId, customerId, title, description, location, contact, type, start, end
+        FROM 
+            appointment
+        WHERE 
+            appointmentId = @appointmentId";
+
+                MySqlCommand cmd = new MySqlCommand(query, DBConnection.conn);
+                cmd.Parameters.AddWithValue("@appointmentId", appointmentId);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        apptDetails["appointmentId"] = reader["appointmentId"].ToString();
+                        apptDetails["customerId"] = reader["customerId"].ToString();
+                        apptDetails["title"] = reader["title"].ToString();
+                        apptDetails["description"] = reader["description"].ToString();
+                        apptDetails["location"] = reader["location"].ToString();
+                        apptDetails["contact"] = reader["contact"].ToString();
+                        apptDetails["type"] = reader["type"].ToString();
+                        apptDetails["start"] = reader["start"].ToString();
+                        apptDetails["end"] = reader["end"].ToString();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error retrieving appointment details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return apptDetails;
+        }
+
+        private void UpdateForm_AppointmentUpdated(object sender, EventArgs e)
+        {
+            UpdateApptGridView();
+        }
+
+
         //Deleting Appt
         private void DeleteApptBtn_Click(object sender, EventArgs e)
         {
