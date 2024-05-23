@@ -524,6 +524,12 @@ namespace BrittanyT_wguC969
             LoadSpecificDayAppointments(selectedDate);
         }
 
+
+        private void ReportsBtn_Click(object sender, EventArgs e)
+        {
+            ReportForm reportForm = new ReportForm();
+            reportForm.ShowDialog();
+        }
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             this.Close();

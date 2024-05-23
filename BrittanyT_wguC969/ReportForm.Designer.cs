@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.Button();
-            this.LogoutBtn = new System.Windows.Forms.Button();
             this.ScheduleGridView = new System.Windows.Forms.DataGridView();
             this.UsernameSelect = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,27 +52,21 @@
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(686, 510);
+            this.BackBtn.Location = new System.Drawing.Point(785, 521);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(75, 23);
             this.BackBtn.TabIndex = 1;
             this.BackBtn.Text = "Back";
             this.BackBtn.UseVisualStyleBackColor = true;
-            // 
-            // LogoutBtn
-            // 
-            this.LogoutBtn.Location = new System.Drawing.Point(785, 510);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(75, 23);
-            this.LogoutBtn.TabIndex = 2;
-            this.LogoutBtn.Text = "LogOut";
-            this.LogoutBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // ScheduleGridView
             // 
+            this.ScheduleGridView.AllowUserToAddRows = false;
             this.ScheduleGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ScheduleGridView.Location = new System.Drawing.Point(31, 80);
             this.ScheduleGridView.Name = "ScheduleGridView";
+            this.ScheduleGridView.ReadOnly = true;
             this.ScheduleGridView.Size = new System.Drawing.Size(829, 166);
             this.ScheduleGridView.TabIndex = 3;
             // 
@@ -84,23 +77,26 @@
             this.UsernameSelect.Name = "UsernameSelect";
             this.UsernameSelect.Size = new System.Drawing.Size(121, 21);
             this.UsernameSelect.TabIndex = 4;
+            this.UsernameSelect.SelectedIndexChanged += new System.EventHandler(this.UsernameSelect_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(622, 57);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(622, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 17);
+            this.label2.Size = new System.Drawing.Size(111, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Select a User";
+            this.label2.Text = "Select a User:";
             // 
             // ApptTypesGridView
             // 
+            this.ApptTypesGridView.AllowUserToAddRows = false;
             this.ApptTypesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ApptTypesGridView.Location = new System.Drawing.Point(31, 296);
             this.ApptTypesGridView.Name = "ApptTypesGridView";
-            this.ApptTypesGridView.Size = new System.Drawing.Size(365, 202);
+            this.ApptTypesGridView.ReadOnly = true;
+            this.ApptTypesGridView.Size = new System.Drawing.Size(298, 202);
             this.ApptTypesGridView.TabIndex = 6;
             // 
             // label3
@@ -134,7 +130,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.UsernameSelect);
             this.Controls.Add(this.ScheduleGridView);
-            this.Controls.Add(this.LogoutBtn);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.label1);
             this.Name = "ReportForm";
@@ -150,7 +145,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BackBtn;
-        private System.Windows.Forms.Button LogoutBtn;
         private System.Windows.Forms.DataGridView ScheduleGridView;
         private System.Windows.Forms.ComboBox UsernameSelect;
         private System.Windows.Forms.Label label2;

@@ -166,6 +166,7 @@
             this.ReportsBtn.TabIndex = 11;
             this.ReportsBtn.Text = "Reports";
             this.ReportsBtn.UseVisualStyleBackColor = true;
+            this.ReportsBtn.Click += new System.EventHandler(this.ReportsBtn_Click);
             // 
             // CurrWeekBtn
             // 
