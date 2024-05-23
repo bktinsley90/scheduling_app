@@ -251,8 +251,28 @@ namespace BrittanyT_wguC969
         private void AddApptBtn_Click(object sender, EventArgs e)
         {
             AddApptForm addApptForm = new AddApptForm();
+            addApptForm.AppointmentAdded += AddApptForm_AppointmentAdded;
             addApptForm.ShowDialog();
         }
+        private void AddApptForm_AppointmentAdded(object sender, EventArgs e)
+        {
+            UpdateApptGridView();
+        }
+
+        private void UpdateApptGridView()
+        {
+            string query = "SELECT appointmentId, customerId, title, description, location, contact, type, start, end FROM appointment";
+            DataTable dataTable = new DataTable();
+
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, DBConnection.conn))
+            {
+                adapter.Fill(dataTable);
+            }
+
+            ApptGridView.DataSource = dataTable;
+            CustomizeDataGridView(ApptGridView);
+        }
+
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             this.Close();

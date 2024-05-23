@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.Common;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace BrittanyT_wguC969
 {
     public partial class AddApptForm : Form
     {
+        public event EventHandler AppointmentAdded;
         public AddApptForm()
         {
             InitializeComponent();
@@ -195,7 +197,7 @@ namespace BrittanyT_wguC969
                 createAppointment(custID, title, description, location, contact, type, start, end, userID);
                 MessageBox.Show("Appointment saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // Refresh the appointments grid view
-                //RefreshAppointmentGridView();
+                AppointmentAdded?.Invoke(this, EventArgs.Empty);
                 Close();
             }
         }
