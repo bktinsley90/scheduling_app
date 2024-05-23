@@ -167,7 +167,4 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>449, 285</value>
   </data>
-  <data name="errorMsg" xml:space="preserve">
-    <value>El nombre de usuario y la contraseña no coinciden.</value>
-  </data>
 </root>
