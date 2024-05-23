@@ -43,6 +43,7 @@
             this.CurrWeekBtn = new System.Windows.Forms.RadioButton();
             this.CurrMonthBtn = new System.Windows.Forms.RadioButton();
             this.AllApptsBtn = new System.Windows.Forms.RadioButton();
+            this.ApptDatePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ApptGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView)).BeginInit();
             this.SuspendLayout();
@@ -149,7 +150,7 @@
             // 
             // LogOutBtn
             // 
-            this.LogOutBtn.Location = new System.Drawing.Point(929, 414);
+            this.LogOutBtn.Location = new System.Drawing.Point(1047, 389);
             this.LogOutBtn.Name = "LogOutBtn";
             this.LogOutBtn.Size = new System.Drawing.Size(75, 23);
             this.LogOutBtn.TabIndex = 10;
@@ -159,7 +160,7 @@
             // 
             // Reports
             // 
-            this.Reports.Location = new System.Drawing.Point(848, 414);
+            this.Reports.Location = new System.Drawing.Point(949, 389);
             this.Reports.Name = "Reports";
             this.Reports.Size = new System.Drawing.Size(75, 23);
             this.Reports.TabIndex = 11;
@@ -169,41 +170,53 @@
             // CurrWeekBtn
             // 
             this.CurrWeekBtn.AutoSize = true;
-            this.CurrWeekBtn.Location = new System.Drawing.Point(707, 12);
+            this.CurrWeekBtn.Location = new System.Drawing.Point(1019, 116);
             this.CurrWeekBtn.Name = "CurrWeekBtn";
             this.CurrWeekBtn.Size = new System.Drawing.Size(91, 17);
             this.CurrWeekBtn.TabIndex = 12;
             this.CurrWeekBtn.TabStop = true;
             this.CurrWeekBtn.Text = "Current Week";
             this.CurrWeekBtn.UseVisualStyleBackColor = true;
+            this.CurrWeekBtn.CheckedChanged += new System.EventHandler(this.CurrWeekBtn_CheckedChanged);
             // 
             // CurrMonthBtn
             // 
             this.CurrMonthBtn.AutoSize = true;
-            this.CurrMonthBtn.Location = new System.Drawing.Point(809, 12);
+            this.CurrMonthBtn.Location = new System.Drawing.Point(1019, 77);
             this.CurrMonthBtn.Name = "CurrMonthBtn";
             this.CurrMonthBtn.Size = new System.Drawing.Size(92, 17);
             this.CurrMonthBtn.TabIndex = 13;
             this.CurrMonthBtn.TabStop = true;
             this.CurrMonthBtn.Text = "Current Month";
             this.CurrMonthBtn.UseVisualStyleBackColor = true;
+            this.CurrMonthBtn.CheckedChanged += new System.EventHandler(this.CurrMonthBtn_CheckedChanged);
             // 
             // AllApptsBtn
             // 
             this.AllApptsBtn.AutoSize = true;
-            this.AllApptsBtn.Location = new System.Drawing.Point(909, 12);
+            this.AllApptsBtn.Location = new System.Drawing.Point(1019, 37);
             this.AllApptsBtn.Name = "AllApptsBtn";
             this.AllApptsBtn.Size = new System.Drawing.Size(103, 17);
             this.AllApptsBtn.TabIndex = 14;
             this.AllApptsBtn.TabStop = true;
             this.AllApptsBtn.Text = "All Appointments";
             this.AllApptsBtn.UseVisualStyleBackColor = true;
+            this.AllApptsBtn.CheckedChanged += new System.EventHandler(this.AllApptBtn_CheckedChanged);
+            // 
+            // ApptDatePicker
+            // 
+            this.ApptDatePicker.Location = new System.Drawing.Point(804, 9);
+            this.ApptDatePicker.Name = "ApptDatePicker";
+            this.ApptDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.ApptDatePicker.TabIndex = 15;
+            this.ApptDatePicker.ValueChanged += new System.EventHandler(this.ApptDatePicker_ValueChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 454);
+            this.ClientSize = new System.Drawing.Size(1135, 421);
+            this.Controls.Add(this.ApptDatePicker);
             this.Controls.Add(this.AllApptsBtn);
             this.Controls.Add(this.CurrMonthBtn);
             this.Controls.Add(this.CurrWeekBtn);
@@ -245,5 +258,6 @@
         private System.Windows.Forms.RadioButton CurrWeekBtn;
         private System.Windows.Forms.RadioButton CurrMonthBtn;
         private System.Windows.Forms.RadioButton AllApptsBtn;
+        private System.Windows.Forms.DateTimePicker ApptDatePicker;
     }
 }

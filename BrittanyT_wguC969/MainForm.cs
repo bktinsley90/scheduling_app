@@ -390,6 +390,98 @@ namespace BrittanyT_wguC969
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //changing Appt Views 
+        private void LoadAllAppointments()
+        {
+            string query = "SELECT appointmentId, customerId, title, description, location, contact, type, start, end FROM appointment";
+            LoadAppointmentData(query);
+        }
+
+        private void LoadCurrentMonthAppointments()
+        {
+            string query = @"
+        SELECT appointmentId, customerId, title, description, location, contact, type, start, end 
+        FROM appointment 
+        WHERE MONTH(start) = MONTH(CURRENT_DATE()) 
+        AND YEAR(start) = YEAR(CURRENT_DATE())";
+            LoadAppointmentData(query);
+        }
+
+        private void LoadCurrentWeekAppointments()
+        {
+            string query = @"
+        SELECT appointmentId, customerId, title, description, location, contact, type, start, end 
+        FROM appointment 
+        WHERE WEEK(start, 1) = WEEK(CURRENT_DATE(), 1) 
+        AND YEAR(start) = YEAR(CURRENT_DATE())";
+            LoadAppointmentData(query);
+        }
+
+        private void LoadSpecificDayAppointments(DateTime date)
+        {
+            string query = @"
+        SELECT appointmentId, customerId, title, description, location, contact, type, start, end 
+        FROM appointment 
+        WHERE DATE(start) = @selectedDate";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, DBConnection.conn))
+            {
+                cmd.Parameters.AddWithValue("@selectedDate", date.ToString("yyyy-MM-dd"));
+                LoadAppointmentData(cmd);
+            }
+        }
+
+        private void LoadAppointmentData(string query)
+        {
+            DataTable dataTable = new DataTable();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, DBConnection.conn))
+            {
+                adapter.Fill(dataTable);
+            }
+            ApptGridView.DataSource = dataTable;
+            CustomizeDataGridView(ApptGridView);
+        }
+
+        private void LoadAppointmentData(MySqlCommand cmd)
+        {
+            DataTable dataTable = new DataTable();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+            {
+                adapter.Fill(dataTable);
+            }
+            ApptGridView.DataSource = dataTable;
+            CustomizeDataGridView(ApptGridView);
+        }
+        //change events
+        private void AllApptBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AllApptsBtn.Checked)
+            {
+                LoadAllAppointments();
+            }
+        }
+
+        private void CurrMonthBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CurrMonthBtn.Checked)
+            {
+                LoadCurrentMonthAppointments();
+            }
+        }
+
+        private void CurrWeekBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CurrWeekBtn.Checked)
+            {
+                LoadCurrentWeekAppointments();
+            }
+        }
+
+        private void ApptDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = ApptDatePicker.Value;
+            LoadSpecificDayAppointments(selectedDate);
+        }
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
