@@ -166,6 +166,7 @@
             this.CustomerIdInput.Name = "CustomerIdInput";
             this.CustomerIdInput.Size = new System.Drawing.Size(100, 20);
             this.CustomerIdInput.TabIndex = 11;
+            this.CustomerIdInput.Text = "Auto-Generated";
             // 
             // CustomerNameInput
             // 

@@ -272,6 +272,54 @@ namespace BrittanyT_wguC969
             ApptGridView.DataSource = dataTable;
             CustomizeDataGridView(ApptGridView);
         }
+        //Update Appt
+        private void UpdateApptBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+        //Deleting Appt
+        private void DeleteApptBtn_Click(object sender, EventArgs e)
+        {
+            // Ensure an appointment is selected
+            if (ApptGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select an appointment to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Confirm deletion
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this appointment?", "Confirm Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // Get the selected appointment ID
+                int selectedRowIndex = ApptGridView.SelectedRows[0].Index;
+                int appointmentId = Convert.ToInt32(ApptGridView.Rows[selectedRowIndex].Cells["appointmentId"].Value);
+
+                // Delete the appointment from the database
+                DeleteAppointment(appointmentId);
+
+                // Refresh the ApptGridView
+                UpdateApptGridView();
+            }
+        }
+       
+        private void DeleteAppointment(int appointmentId)
+        {
+            try
+            {
+                using (MySqlCommand cmd = new MySqlCommand("DELETE FROM appointment WHERE appointmentId = @appointmentId", DBConnection.conn))
+                {
+                    cmd.Parameters.AddWithValue("@appointmentId", appointmentId);
+                    cmd.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Appointment deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {

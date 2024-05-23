@@ -104,6 +104,7 @@
             this.DeleteApptBtn.TabIndex = 5;
             this.DeleteApptBtn.Text = "Delete";
             this.DeleteApptBtn.UseVisualStyleBackColor = true;
+            this.DeleteApptBtn.Click += new System.EventHandler(this.DeleteApptBtn_Click);
             // 
             // AddApptBtn
             // 
