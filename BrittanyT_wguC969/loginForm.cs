@@ -69,7 +69,16 @@ namespace BrittanyT_wguC969
                     else
                     {
                         LogLogin(username, false);
-                        string errorMessage = resourceManager.GetString("errorMsg");
+                        string errorMessage;
+                        if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "es")
+                        {
+                            errorMessage = "Nombre de usuario y contraseña no coinciden.";
+                        }
+                        else
+                        {
+                           errorMessage = "Username and Password do not match.";
+                        }
+
                         MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }

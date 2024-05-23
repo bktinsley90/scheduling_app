@@ -83,6 +83,16 @@ namespace BrittanyT_wguC969
                 // Fill the DataTable with the data from the database
                 dataAdapter.Fill(dataTable);
 
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    DateTime utcStart = DateTime.Parse(row["start"].ToString());
+                    DateTime utcEnd = DateTime.Parse(row["end"].ToString());
+
+                    row["start"] = ConvertUtcToLocal(utcStart);
+                    row["end"] = ConvertUtcToLocal(utcEnd);
+                }
+
+
                 // Bind the DataTable to the DataGridView
                 ApptGridView.DataSource = dataTable;
                 CustomizeDataGridView(ApptGridView);
@@ -92,6 +102,17 @@ namespace BrittanyT_wguC969
                 MessageBox.Show($"Error loading appointment data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private DateTime ConvertUtcToLocal(DateTime utcDateTime)
+        {
+            // Get the user's local time zone
+            TimeZoneInfo userTimeZone = TimeZoneInfo.Local;
+
+            // Convert the UTC time to the user's local time
+            DateTime userLocalTime = TimeZoneInfo.ConvertTimeFromUtc(utcDateTime, userTimeZone);
+
+            return userLocalTime;
+        }
+
         //updating CustomerGridView
         private void AddCustomerForm_CustomerAdded(object sender, EventArgs e)
         {
@@ -438,6 +459,16 @@ namespace BrittanyT_wguC969
             {
                 adapter.Fill(dataTable);
             }
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                DateTime utcStart = DateTime.Parse(row["start"].ToString());
+                DateTime utcEnd = DateTime.Parse(row["end"].ToString());
+
+                row["start"] = ConvertUtcToLocal(utcStart);
+                row["end"] = ConvertUtcToLocal(utcEnd);
+            }
+
             ApptGridView.DataSource = dataTable;
             CustomizeDataGridView(ApptGridView);
         }
@@ -449,6 +480,16 @@ namespace BrittanyT_wguC969
             {
                 adapter.Fill(dataTable);
             }
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                DateTime utcStart = DateTime.Parse(row["start"].ToString());
+                DateTime utcEnd = DateTime.Parse(row["end"].ToString());
+
+                row["start"] = ConvertUtcToLocal(utcStart);
+                row["end"] = ConvertUtcToLocal(utcEnd);
+            }
+
             ApptGridView.DataSource = dataTable;
             CustomizeDataGridView(ApptGridView);
         }

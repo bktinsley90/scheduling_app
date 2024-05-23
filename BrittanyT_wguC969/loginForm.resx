@@ -117,262 +117,262 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="userNameInput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
-  </data>
-  <data name="exitBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 280</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="userNameLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="userNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;timezoneLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;passwordInput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;userNameLabel.Name" xml:space="preserve">
-    <value>userNameLabel</value>
-  </data>
-  <data name="&gt;&gt;userNameInput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="passwordInput.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="passwordLabel.Text" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="passwordLabel.Font" type="System.Drawing.Font, System.Drawing">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="userNameLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 16pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1TimeZone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="passwordInput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
-  </data>
-  <data name="&gt;&gt;label1TimeZone.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="exitBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="timezoneLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;exitBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label1TimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 228</value>
-  </data>
-  <data name="&gt;&gt;loginBtn.Name" xml:space="preserve">
-    <value>loginBtn</value>
-  </data>
-  <data name="&gt;&gt;passwordLabel.Name" xml:space="preserve">
-    <value>passwordLabel</value>
-  </data>
-  <data name="loginBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;label1TimeZone.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label1TimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 24</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt, style=Italic</value>
-  </data>
-  <data name="timezoneLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 228</value>
-  </data>
-  <data name="&gt;&gt;userNameLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;passwordInput.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;timezoneLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;passwordInput.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="passwordInput.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
-    <value>*</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;loginBtn.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="userNameLabel.Text" xml:space="preserve">
-    <value>Username</value>
-  </data>
-  <data name="loginBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="userNameInput.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="exitBtn.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="&gt;&gt;passwordLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="passwordLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 26</value>
-  </data>
-  <data name="label1TimeZone.Text" xml:space="preserve">
-    <value>TimeZone</value>
-  </data>
-  <data name="label1TimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;timezoneLabel.Name" xml:space="preserve">
-    <value>timezoneLabel</value>
-  </data>
-  <data name="&gt;&gt;passwordInput.Name" xml:space="preserve">
-    <value>passwordInput</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>472, 330</value>
-  </data>
-  <data name="loginBtn.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="userNameLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>67, 118</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="userNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 26</value>
   </data>
-  <data name="passwordInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 176</value>
+  <data name="userNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="passwordLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="userNameLabel.Text" xml:space="preserve">
+    <value>Username</value>
   </data>
-  <data name="exitBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 236</value>
-  </data>
-  <data name="label1TimeZone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14pt, style=Bold</value>
-  </data>
-  <data name="timezoneLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="userNameLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;loginBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="label1TimeZone.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;exitBtn.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="userNameInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 124</value>
-  </data>
-  <data name="userNameLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>loginForm</value>
-  </data>
-  <data name="loginBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 280</value>
-  </data>
-  <data name="&gt;&gt;timezoneLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;userNameLabel.Name" xml:space="preserve">
+    <value>userNameLabel</value>
   </data>
   <data name="&gt;&gt;userNameLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;exitBtn.Name" xml:space="preserve">
-    <value>exitBtn</value>
-  </data>
-  <data name="&gt;&gt;loginBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;userNameInput.Parent" xml:space="preserve">
+  <data name="&gt;&gt;userNameLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="userNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 26</value>
+  <data name="&gt;&gt;userNameLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="passwordLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="passwordLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
+  </data>
+  <data name="passwordLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 176</value>
+  </data>
+  <data name="passwordLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 26</value>
+  </data>
+  <data name="passwordLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="passwordLabel.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="&gt;&gt;passwordLabel.Name" xml:space="preserve">
+    <value>passwordLabel</value>
+  </data>
+  <data name="&gt;&gt;passwordLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;passwordLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;passwordLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="userNameInput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 124</value>
+  </data>
+  <data name="userNameInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="userNameInput.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;userNameInput.Name" xml:space="preserve">
+    <value>userNameInput</value>
+  </data>
+  <data name="&gt;&gt;userNameInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;userNameInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;userNameInput.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;passwordLabel.Parent" xml:space="preserve">
+  <data name="passwordInput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 176</value>
+  </data>
+  <data name="passwordInput.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="passwordInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="passwordInput.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;passwordInput.Name" xml:space="preserve">
+    <value>passwordInput</value>
+  </data>
+  <data name="&gt;&gt;passwordInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;passwordInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label1TimeZone.Name" xml:space="preserve">
-    <value>label1TimeZone</value>
+  <data name="&gt;&gt;passwordInput.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="passwordLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="loginBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 280</value>
   </data>
-  <data name="&gt;&gt;userNameInput.Name" xml:space="preserve">
-    <value>userNameInput</value>
+  <data name="loginBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 17</value>
+  <data name="loginBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;label1TimeZone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="loginBtn.Text" xml:space="preserve">
+    <value>Login</value>
   </data>
-  <data name="&gt;&gt;passwordLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;loginBtn.Name" xml:space="preserve">
+    <value>loginBtn</value>
+  </data>
+  <data name="&gt;&gt;loginBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loginBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;loginBtn.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="exitBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 280</value>
+  </data>
+  <data name="exitBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="exitBtn.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
+  </data>
+  <data name="exitBtn.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="&gt;&gt;exitBtn.Name" xml:space="preserve">
+    <value>exitBtn</value>
   </data>
   <data name="&gt;&gt;exitBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;userNameLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;exitBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="passwordLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 176</value>
+  <data name="&gt;&gt;exitBtn.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="timezoneLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 228</value>
+  </data>
+  <data name="timezoneLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="timezoneLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;timezoneLabel.Name" xml:space="preserve">
+    <value>timezoneLabel</value>
+  </data>
+  <data name="&gt;&gt;timezoneLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timezoneLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;timezoneLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1TimeZone.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1TimeZone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14pt, style=Bold</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1TimeZone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1TimeZone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 228</value>
+  </data>
+  <data name="label1TimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 24</value>
+  </data>
+  <data name="label1TimeZone.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label1TimeZone.Text" xml:space="preserve">
+    <value>TimeZone</value>
+  </data>
+  <data name="&gt;&gt;label1TimeZone.Name" xml:space="preserve">
+    <value>label1TimeZone</value>
+  </data>
+  <data name="&gt;&gt;label1TimeZone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1TimeZone.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1TimeZone.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TimeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt, style=Italic</value>
+  </data>
+  <data name="TimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 236</value>
+  </data>
+  <data name="TimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 17</value>
+  </data>
+  <data name="TimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="TimeLabel.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;TimeLabel.Name" xml:space="preserve">
+    <value>TimeLabel</value>
+  </data>
+  <data name="&gt;&gt;TimeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TimeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TimeLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>472, 330</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>loginForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
