@@ -306,7 +306,7 @@ namespace BrittanyT_wguC969
             {
                 string query = @"
         SELECT 
-            appointmentId, customerId, title, description, location, contact, type, start, end
+            appointmentId, customerId, title, description, location, contact, type, start, end, userId
         FROM 
             appointment
         WHERE 
@@ -329,6 +329,7 @@ namespace BrittanyT_wguC969
                         apptDetails["type"] = reader["type"].ToString();
                         apptDetails["start"] = reader["start"].ToString();
                         apptDetails["end"] = reader["end"].ToString();
+                        apptDetails["userId"] = reader["userId"].ToString();
                     }
                 }
             }

@@ -170,7 +170,7 @@ namespace BrittanyT_wguC969
             string type = ApptTypeInput.Text.Trim();
             DateTime start = StartDate.Value.Date.Add(TimeSpan.Parse(StartTime.Text));
             DateTime end = EndDate.Value.Date.Add(TimeSpan.Parse(EndTime.Text));
-            int userID = int.Parse(UserID.SelectedItem.ToString());
+            int userID = int.Parse(UserID.Text);
 
             // Validate the input
             if (ValidateAppointment(custID, title, description, location, contact, type, start, end))
@@ -209,13 +209,16 @@ namespace BrittanyT_wguC969
                 return false;
             }
 
-            // Check for overlapping appointments
-            if (CheckForOverlappingAppointments(custID, start, end))
+            // Skip overlap check if the times haven't changed
+            if (start != DateTime.Parse(_apptDetails["start"]) || end != DateTime.Parse(_apptDetails["end"]))
             {
-                MessageBox.Show("The appointment overlaps with another existing appointment.");
-                return false;
+                // Check for overlapping appointments
+                if (CheckForOverlappingAppointments(custID, start, end))
+                {
+                    MessageBox.Show("The appointment overlaps with another existing appointment.");
+                    return false;
+                }
             }
-
             return true;
         }
         private bool CheckForOverlappingAppointments(int custID, DateTime start, DateTime end)
