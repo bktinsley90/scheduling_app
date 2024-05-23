@@ -39,7 +39,7 @@
             this.UpdateCustomerBtn = new System.Windows.Forms.Button();
             this.DeleteCustomerBtn = new System.Windows.Forms.Button();
             this.LogOutBtn = new System.Windows.Forms.Button();
-            this.Reports = new System.Windows.Forms.Button();
+            this.ReportsBtn = new System.Windows.Forms.Button();
             this.CurrWeekBtn = new System.Windows.Forms.RadioButton();
             this.CurrMonthBtn = new System.Windows.Forms.RadioButton();
             this.AllApptsBtn = new System.Windows.Forms.RadioButton();
@@ -158,14 +158,14 @@
             this.LogOutBtn.UseVisualStyleBackColor = true;
             this.LogOutBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // Reports
+            // ReportsBtn
             // 
-            this.Reports.Location = new System.Drawing.Point(949, 389);
-            this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(75, 23);
-            this.Reports.TabIndex = 11;
-            this.Reports.Text = "Reports";
-            this.Reports.UseVisualStyleBackColor = true;
+            this.ReportsBtn.Location = new System.Drawing.Point(949, 389);
+            this.ReportsBtn.Name = "ReportsBtn";
+            this.ReportsBtn.Size = new System.Drawing.Size(75, 23);
+            this.ReportsBtn.TabIndex = 11;
+            this.ReportsBtn.Text = "Reports";
+            this.ReportsBtn.UseVisualStyleBackColor = true;
             // 
             // CurrWeekBtn
             // 
@@ -220,7 +220,7 @@
             this.Controls.Add(this.AllApptsBtn);
             this.Controls.Add(this.CurrMonthBtn);
             this.Controls.Add(this.CurrWeekBtn);
-            this.Controls.Add(this.Reports);
+            this.Controls.Add(this.ReportsBtn);
             this.Controls.Add(this.LogOutBtn);
             this.Controls.Add(this.DeleteCustomerBtn);
             this.Controls.Add(this.UpdateCustomerBtn);
@@ -254,7 +254,7 @@
         private System.Windows.Forms.Button UpdateCustomerBtn;
         private System.Windows.Forms.Button DeleteCustomerBtn;
         private System.Windows.Forms.Button LogOutBtn;
-        private System.Windows.Forms.Button Reports;
+        private System.Windows.Forms.Button ReportsBtn;
         private System.Windows.Forms.RadioButton CurrWeekBtn;
         private System.Windows.Forms.RadioButton CurrMonthBtn;
         private System.Windows.Forms.RadioButton AllApptsBtn;
