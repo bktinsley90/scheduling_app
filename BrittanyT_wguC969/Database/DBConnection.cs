@@ -13,8 +13,9 @@ namespace BrittanyT_wguC969.Database
     public class DBConnection
     {
         public static MySqlConnection conn { get; set; }
-       
 
+        public static string CurrentUser{ get; set; }
+        
         public static void startConnection()
         {
             try

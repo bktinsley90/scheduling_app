@@ -93,7 +93,7 @@ namespace BrittanyT_wguC969
         private string getCurrentUserName()
         {
             // Return the current user name
-            return CurrentUser.Username; 
+            return DBConnection.CurrentUser;
         }
 
     
