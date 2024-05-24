@@ -32,7 +32,7 @@ namespace BrittanyT_wguC969
         
         private void LoadLanguage(CultureInfo cultureInfo)
         {
-            MessageBox.Show(cultureInfo.TwoLetterISOLanguageName);
+            //MessageBox.Show(cultureInfo.TwoLetterISOLanguageName);
             resourceManager = new ResourceManager("BrittanyT_wguC969.loginForm", Assembly.GetExecutingAssembly());
             if(cultureInfo.TwoLetterISOLanguageName.Equals("es")) {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("es");
