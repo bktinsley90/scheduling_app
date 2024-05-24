@@ -18,6 +18,10 @@ using System.Windows.Forms;
 
 namespace BrittanyT_wguC969
 {
+    public static class CurrentUser
+    {
+        public static string Username { get; set; }
+    }
     public partial class loginForm : Form
     {
 
@@ -31,15 +35,18 @@ namespace BrittanyT_wguC969
         }
         private void LoadLanguage(CultureInfo cultureInfo)
         {
-           
+            //MessageBox.Show(cultureInfo.TwoLetterISOLanguageName);
             resourceManager = new ResourceManager("BrittanyT_wguC969.loginForm", Assembly.GetExecutingAssembly());
-            //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("es");
-            //MessageBox.Show(Thread.CurrentThread.CurrentUICulture.Name);
-            userNameLabel.Text = resourceManager.GetString("userNameLabel.Text");
-            passwordLabel.Text = resourceManager.GetString("passwordLabel.Text");
-            loginBtn.Text = resourceManager.GetString("loginBtn.Text");
-            exitBtn.Text = resourceManager.GetString("exitBtn.Text");
-            label1TimeZone.Text = resourceManager.GetString("label1TimeZone.Text");
+            
+            if(cultureInfo.TwoLetterISOLanguageName.Equals("es")) {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("es");
+                userNameLabel.Text = resourceManager.GetString("userNameLabel.Text");
+                passwordLabel.Text = resourceManager.GetString("passwordLabel.Text");
+                loginBtn.Text = resourceManager.GetString("loginBtn.Text");
+                exitBtn.Text = resourceManager.GetString("exitBtn.Text");
+                label1TimeZone.Text = resourceManager.GetString("label1TimeZone.Text");
+            }
+           
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)
@@ -59,9 +66,11 @@ namespace BrittanyT_wguC969
                     if (userId > 0)
                     {
                         LogLogin(username, true);
+                        CurrentUser.Username = username;
 
                         MainForm mainForm = new MainForm();
                         mainForm.Show();
+
 
                         CheckForUpcomingAppointments(userId);
                         this.Hide();

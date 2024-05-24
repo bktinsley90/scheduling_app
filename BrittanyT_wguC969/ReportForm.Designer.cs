@@ -36,8 +36,11 @@
             this.ApptTypesGridView = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CustomerAppointmentsGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ScheduleGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApptTypesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerAppointmentsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +55,7 @@
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(785, 521);
+            this.BackBtn.Location = new System.Drawing.Point(785, 510);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(75, 23);
             this.BackBtn.TabIndex = 1;
@@ -83,11 +86,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(622, 53);
+            this.label2.Location = new System.Drawing.Point(593, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(140, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Select a User:";
+            this.label2.Text = "Select Consultant:";
             // 
             // ApptTypesGridView
             // 
@@ -96,7 +99,7 @@
             this.ApptTypesGridView.Location = new System.Drawing.Point(31, 296);
             this.ApptTypesGridView.Name = "ApptTypesGridView";
             this.ApptTypesGridView.ReadOnly = true;
-            this.ApptTypesGridView.Size = new System.Drawing.Size(298, 202);
+            this.ApptTypesGridView.Size = new System.Drawing.Size(305, 202);
             this.ApptTypesGridView.TabIndex = 6;
             // 
             // label3
@@ -119,11 +122,33 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Schedules By User";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(565, 277);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(202, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Appointments By Customer";
+            // 
+            // CustomerAppointmentsGridView
+            // 
+            this.CustomerAppointmentsGridView.AllowUserToAddRows = false;
+            this.CustomerAppointmentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CustomerAppointmentsGridView.Location = new System.Drawing.Point(568, 297);
+            this.CustomerAppointmentsGridView.Name = "CustomerAppointmentsGridView";
+            this.CustomerAppointmentsGridView.ReadOnly = true;
+            this.CustomerAppointmentsGridView.Size = new System.Drawing.Size(292, 201);
+            this.CustomerAppointmentsGridView.TabIndex = 10;
+            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 545);
+            this.Controls.Add(this.CustomerAppointmentsGridView);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ApptTypesGridView);
@@ -136,6 +161,7 @@
             this.Text = "ReportForm";
             ((System.ComponentModel.ISupportInitialize)(this.ScheduleGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApptTypesGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerAppointmentsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +177,7 @@
         private System.Windows.Forms.DataGridView ApptTypesGridView;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView CustomerAppointmentsGridView;
     }
 }

@@ -23,7 +23,7 @@ namespace BrittanyT_wguC969.Database
                 conn = new MySqlConnection(construct);
 
                 conn.Open();
-                MessageBox.Show("Connection is open");
+                //MessageBox.Show("Connection is open");
 
             }
             catch(MySqlException ex) {

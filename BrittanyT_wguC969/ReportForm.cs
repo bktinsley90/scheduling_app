@@ -18,6 +18,7 @@ namespace BrittanyT_wguC969
         {
             InitializeComponent();
             LoadAppointmentTypesByMonth();
+            LoadCustomerAppointmentsReport();
             FillUsernameSelectComboBox();
         }
         private void FillUsernameSelectComboBox()
@@ -140,6 +141,62 @@ namespace BrittanyT_wguC969
                 MessageBox.Show($"Error loading user appointments: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void LoadCustomerAppointmentsReport()
+        {
+            try
+            {
+                // Query to get customer IDs, names, and appointment counts
+                string query = @"
+                SELECT 
+                    c.customerId,
+                    c.customerName,
+                    a.appointmentId
+                FROM 
+                    customer c
+                LEFT JOIN 
+                    appointment a ON c.customerId = a.customerId";
+
+                MySqlCommand command = new MySqlCommand(query, DBConnection.conn);
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                // Use LINQ to group by customer and count appointments
+                var groupedData = dataTable.AsEnumerable()
+                    .GroupBy(row => new
+                    {
+                        CustomerId = row.Field<int>("customerId"),
+                        CustomerName = row.Field<string>("customerName")
+                    })
+                    .Select(group => new
+                    {
+                        CustomerId = group.Key.CustomerId,
+                        CustomerName = group.Key.CustomerName,
+                        AppointmentCount = group.Count(row => row.Field<int?>("appointmentId") != null)
+                    })
+                    .ToList();
+
+                // Convert the grouped data to a DataTable
+                DataTable reportTable = new DataTable();
+                reportTable.Columns.Add("Customer ID", typeof(int));
+                reportTable.Columns.Add("Customer Name", typeof(string));
+                reportTable.Columns.Add("Appointment Count", typeof(int));
+
+                foreach (var item in groupedData)
+                {
+                    reportTable.Rows.Add(item.CustomerId, item.CustomerName, item.AppointmentCount);
+                }
+
+                // Bind the DataTable to the DataGridView
+                CustomerAppointmentsGridView.DataSource = reportTable;
+                CustomizeDataGridView(CustomerAppointmentsGridView);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading customer appointments report: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private DateTime ConvertUtcToLocal(DateTime utcDateTime)
         {
             TimeZoneInfo userTimeZone = TimeZoneInfo.Local;
@@ -156,6 +213,5 @@ namespace BrittanyT_wguC969
         {
             Close();
         }
-       
     }
 }

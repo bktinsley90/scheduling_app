@@ -183,7 +183,6 @@ namespace BrittanyT_wguC969
                 // Raise the AppointmentUpdated event
                 AppointmentUpdated?.Invoke(this, EventArgs.Empty);
 
-                // Close the form
                 Close();
             }
         }
