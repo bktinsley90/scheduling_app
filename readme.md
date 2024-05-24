@@ -15,5 +15,5 @@ This is a scheduling application that allows users to create, update, and delete
 ![main screen](./BrittanyT_wguC969/pictures/mainform.png)
 ![add appointment screen](./BrittanyT_wguC969/pictures/addAppointmentfrm.png)
 ![update appointment screen](./BrittanyT_wguC969/pictures/updateAppointmentfrm.png)
-![Add customer screen](./BrittanyT_wguC969/pictures/addCustomerform.png)
-![update customer screen](./BrittanyT_wguC969/pictures/updateCustomerform.png)
+![Add customer screen](./BrittanyT_wguC969/pictures/addcustomerform.png)
+![update customer screen](./BrittanyT_wguC969/pictures/updatecustomerform.png)
