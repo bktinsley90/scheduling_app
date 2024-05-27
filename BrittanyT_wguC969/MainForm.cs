@@ -241,6 +241,12 @@ namespace BrittanyT_wguC969
                 // Get the selected customer ID
                 int selectedRowIndex = CustomerGridView.SelectedRows[0].Index;
                 int customerId = Convert.ToInt32(CustomerGridView.Rows[selectedRowIndex].Cells["customerId"].Value);
+                // Check if the customer has any appointments
+                if (CustomerHasAppointments(customerId))
+                {
+                    MessageBox.Show("Cannot delete customer with existing appointments.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 // Delete the customer from the database
                 DeleteCustomer(customerId);
@@ -267,6 +273,17 @@ namespace BrittanyT_wguC969
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private bool CustomerHasAppointments(int customerId)
+        {
+            string query = "SELECT COUNT(*) FROM appointment WHERE customerId = @customerId";
+            using (MySqlCommand cmd = new MySqlCommand(query, DBConnection.conn))
+            {
+                cmd.Parameters.AddWithValue("@customerId", customerId);
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return count > 0;
+            }
+        }
+
         //Appointment Section
 
         private void AddApptBtn_Click(object sender, EventArgs e)
