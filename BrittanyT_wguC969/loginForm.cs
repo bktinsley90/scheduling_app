@@ -37,6 +37,9 @@ namespace BrittanyT_wguC969
             if(cultureInfo.TwoLetterISOLanguageName.Equals("es")) {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("es");
                 
+            }else if(cultureInfo.TwoLetterISOLanguageName.Equals("fr"))
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr");
             }
             userNameLabel.Text = resourceManager.GetString("userNameLabel.Text");
             passwordLabel.Text = resourceManager.GetString("passwordLabel.Text");
@@ -81,6 +84,11 @@ namespace BrittanyT_wguC969
                         if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "es")
                         {
                             errorMessage = "Nombre de usuario y contraseña no coinciden.";
+                        }
+                        else if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "fr")
+                        {
+
+                            errorMessage = "Le nom d'utilisateur et le mot de passe ne correspondent pas.";
                         }
                         else
                         {
